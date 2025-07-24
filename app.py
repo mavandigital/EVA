@@ -15,11 +15,16 @@ app.config['LANGUAGES'] = {
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 babel = Babel(app)
 
+@app.before_request
+def before_request():
+    if 'language' in session:
+        g.locale = session['language']
+    else:
+        g.locale = request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+
 @babel.localeselector
 def get_locale():
-    if 'language' in session:
-        return session['language']
-    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+    return g.locale
 
 @app.route('/language/<language>')
 def set_language(language=None):
