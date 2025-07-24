@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% block title %}Impostazioni{% endblock %}
+{% block content %}
+<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Impostazioni</p></div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Il tuo account</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
+  <div
+    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD051YBlqLTl3TmO_bbrl6Y4Scq0MlCtaY9v4rIEKGIvXuhmRyeR9qzkkLfPJhavjPrt2vODD9ClGb_3YXVuuLR3FCYmt9SKMj6TBigoikJh1HwyoNGYdHS9JPbn0xOsDEaXzODkLlFYrYi3VMDwCBAyCcn9OVHyG_LNeQgULqnz_NhK-3jKRqScmcKg5QztBwaIpv2rDFopZay7i572_lo17FFwaJQKAFBhB_31b66J2HmC0mdfni9PnUVjO-yfaZUlSlMQbnsGQ");'
+  ></div>
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Amanda Rodriguez</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">amanda.rodriguez@innovatech.com</p>
+  </div>
+</div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Preferenze</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Formato data e ora</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Scegli come visualizzare le date e gli orari</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Lingua</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Scegli la tua lingua preferita</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Tema</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Scegli il tema dell'app</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Notifiche</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Notifiche</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Gestisci le tue notifiche</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Privacy</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Privacy</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Gestisci le tue impostazioni sulla privacy</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Sicurezza</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Cambia password</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Cambia la tua password</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Autenticazione a due fattori</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Abilita l'autenticazione a due fattori</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Informazioni</h2>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Termini di servizio</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Visualizza i termini di servizio</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Informativa sulla privacy</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Visualizza l'informativa sulla privacy</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex flex-col justify-center">
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">Informazioni sull'app</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Visualizza le informazioni sull'app</p>
+  </div>
+  <div class="shrink-0">
+    <div class="text-white flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+{% endblock %}

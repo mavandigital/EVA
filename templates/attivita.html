@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Attività{% endblock %}
+{% block content %}
+<div class="flex flex-wrap justify-between gap-3 p-4">
+  <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Attività</p>
+  <!-- Add New Task Form -->
+  <form action="{{ url_for('new_task') }}" method="post" class="flex gap-2">
+      <input type="text" name="title" placeholder="New Task Title" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <input type="text" name="description" placeholder="Description" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <select name="status" class="form-select bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+          <option>Da fare</option>
+          <option>In corso</option>
+          <option>Completato</option>
+      </select>
+      <button type="submit" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#264532] text-white text-sm font-medium leading-normal">
+          <span class="truncate">Nuova Attività</span>
+      </button>
+  </form>
+</div>
+
+{% for status, task_list in tasks.items() %}
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{ status }}</h2>
+<div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+  {% for task in task_list %}
+  <div class="bg-[#1a2e24] rounded-lg p-4 flex flex-col justify-between">
+    <div>
+      <p class="text-white tracking-light text-2xl font-bold leading-tight">{{ task.title }}</p>
+      <p class="text-white text-base font-medium leading-normal">{{ task.description }}</p>
+    </div>
+    <div class="flex justify-between items-center mt-4">
+        <form action="{{ url_for('update_task', task_id=task.id) }}" method="post" class="flex gap-2 items-center">
+            <select name="status" class="form-select bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+                <option {% if task.status == 'Da fare' %}selected{% endif %}>Da fare</option>
+                <option {% if task.status == 'In corso' %}selected{% endif %}>In corso</option>
+                <option {% if task.status == 'Completato' %}selected{% endif %}>Completato</option>
+            </select>
+            <button type="submit" class="text-white">Update</button>
+        </form>
+        <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post">
+            <button type="submit" class="text-red-500">Delete</button>
+        </form>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Pagamenti{% endblock %}
+{% block content %}
+<div class="flex flex-wrap justify-between gap-3 p-4">
+  <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Payments</p>
+  <form action="{{ url_for('new_payment') }}" method="post" class="flex gap-2">
+      <input type="text" name="description" placeholder="Payment Description" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <input type="number" step="0.01" name="amount" placeholder="Amount" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <input type="date" name="due_date" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <button type="submit" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#264532] text-white text-sm font-medium leading-normal">
+          <span class="truncate">New Payment</span>
+      </button>
+  </form>
+</div>
+
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming</h2>
+{% for payment in payments['Upcoming'] %}
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex items-center gap-4">
+    <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="File" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path
+          d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+        ></path>
+      </svg>
+    </div>
+    <div class="flex flex-col justify-center">
+      <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ payment.description }}</p>
+      <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Due on {{ payment.due_date }}</p>
+    </div>
+  </div>
+  <div class="shrink-0"><p class="text-white text-base font-normal leading-normal">${{ "%.2f"|format(payment.amount) }}</p></div>
+</div>
+{% endfor %}
+
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Past</h2>
+{% for payment in payments['Past'] %}
+<div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex items-center gap-4">
+    <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="File" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path
+          d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+        ></path>
+      </svg>
+    </div>
+    <div class="flex flex-col justify-center">
+      <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ payment.description }}</p>
+      <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Paid on {{ payment.due_date }}</p>
+    </div>
+  </div>
+  <div class="shrink-0"><p class="text-white text-base font-normal leading-normal">${{ "%.2f"|format(payment.amount) }}</p></div>
+</div>
+{% endfor %}
+{% endblock %}
