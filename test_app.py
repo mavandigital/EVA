@@ -30,16 +30,41 @@ def test_full_flow():
     assert 'Overview' in r.text
     print("Login successful.")
 
+    # Add a new client
+    print("Testing new client...")
+    client_data = {'name': 'Test Client'}
+    r = session.post(f'{BASE_URL}/clients/new', data=client_data, allow_redirects=True)
+    assert r.status_code == 200
+    assert 'Test Client' in r.text
+    print("New client added successfully.")
+
+    # Add a new badge
+    print("Testing new badge...")
+    badge_data = {'name': 'Urgent'}
+    r = session.post(f'{BASE_URL}/badges/new', data=badge_data, allow_redirects=True)
+    assert r.status_code == 200
+    assert 'Urgent' in r.text
+    print("New badge added successfully.")
+
+    # Get client and badge IDs
+    soup = BeautifulSoup(r.text, 'html.parser')
+    client_id = soup.find('option', text='Test Client')['value']
+    badge_id = soup.find('option', text='Urgent')['value']
+
     # Add a new task
     print("Testing new task...")
     task_data = {
         'title': 'Test Task',
         'description': 'This is a test task.',
-        'status': 'Da fare'
+        'status': 'Da fare',
+        'client_id': client_id,
+        'badge_ids': [badge_id]
     }
     r = session.post(f'{BASE_URL}/tasks/new', data=task_data, allow_redirects=True)
     assert r.status_code == 200
     assert 'Test Task' in r.text
+    assert 'Test Client' in r.text
+    assert 'Urgent' in r.text
     print("New task added successfully.")
 
     # Add a new payment

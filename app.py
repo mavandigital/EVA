@@ -111,7 +111,15 @@ def home():
 @login_required
 def attivita():
     db = get_db()
-    tasks_raw = db.execute('SELECT * FROM tasks WHERE user_id = ?', (session['user_id'],)).fetchall()
+    tasks_raw = db.execute('''
+        SELECT t.*, c.name as client_name
+        FROM tasks t
+        LEFT JOIN clients c ON t.client_id = c.id
+        WHERE t.user_id = ?
+    ''', (session['user_id'],)).fetchall()
+
+    clients = db.execute('SELECT * FROM clients').fetchall()
+    badges = db.execute('SELECT * FROM badges').fetchall()
 
     tasks = {
         'Da fare': [],
@@ -120,9 +128,30 @@ def attivita():
     }
 
     for task in tasks_raw:
-        tasks[task['status']].append(dict(task))
+        task_dict = dict(task)
+        task_badges = db.execute('SELECT b.name FROM badges b JOIN task_badges tb ON b.id = tb.badge_id WHERE tb.task_id = ?', (task['id'],)).fetchall()
+        task_dict['badges'] = [b['name'] for b in task_badges]
+        tasks[task['status']].append(task_dict)
 
-    return render_template('attivita.html', tasks=tasks)
+    return render_template('attivita.html', tasks=tasks, clients=clients, badges=badges)
+
+@app.route('/clients/new', methods=['POST'])
+@login_required
+def new_client():
+    name = request.form['name']
+    db = get_db()
+    db.execute('INSERT INTO clients (name) VALUES (?)', (name,))
+    db.commit()
+    return redirect(url_for('attivita'))
+
+@app.route('/badges/new', methods=['POST'])
+@login_required
+def new_badge():
+    name = request.form['name']
+    db = get_db()
+    db.execute('INSERT INTO badges (name) VALUES (?)', (name,))
+    db.commit()
+    return redirect(url_for('attivita'))
 
 @app.route('/tasks/new', methods=['POST'])
 @login_required
@@ -130,9 +159,17 @@ def new_task():
     title = request.form['title']
     description = request.form.get('description')
     status = request.form['status']
+    client_id = request.form.get('client_id')
+    badge_ids = request.form.getlist('badge_ids')
+
     db = get_db()
-    db.execute('INSERT INTO tasks (title, description, status, user_id) VALUES (?, ?, ?, ?)',
-               (title, description, status, session['user_id']))
+    cursor = db.execute('INSERT INTO tasks (title, description, status, user_id, client_id) VALUES (?, ?, ?, ?, ?)',
+               (title, description, status, session['user_id'], client_id))
+    task_id = cursor.lastrowid
+
+    for badge_id in badge_ids:
+        db.execute('INSERT INTO task_badges (task_id, badge_id) VALUES (?, ?)', (task_id, badge_id))
+
     db.commit()
     return redirect(url_for('attivita'))
 
@@ -217,10 +254,12 @@ def pagamenti():
     }
 
     for payment in payments_raw:
-        if payment['status'] == 'Scheduled':
-            payments['Upcoming'].append(dict(payment))
+        payment_dict = dict(payment)
+        payment_dict['amount'] = float(payment_dict['amount'])
+        if payment_dict['status'] == 'Scheduled':
+            payments['Upcoming'].append(payment_dict)
         else:
-            payments['Past'].append(dict(payment))
+            payments['Past'].append(payment_dict)
 
     return render_template('pagamenti.html', payments=payments)
 
