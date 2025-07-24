@@ -1,0 +1,352 @@
+# Italian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-24 23:14+0000\n"
+"PO-Revision-Date: 2025-07-24 23:14+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/attivita.html:2 templates/attivita.html:5
+msgid "Attività"
+msgstr "Attività"
+
+#: templates/attivita.html:11
+msgid "New Client Name"
+msgstr "Nuovo Nome Cliente"
+
+#: templates/attivita.html:13
+msgid "Add Client"
+msgstr "Aggiungi Cliente"
+
+#: templates/attivita.html:17
+msgid "New Badge Name"
+msgstr "Nuovo Nome Badge"
+
+#: templates/attivita.html:19
+msgid "Add Badge"
+msgstr "Aggiungi Badge"
+
+#: templates/attivita.html:27
+msgid "Create New Task"
+msgstr "Crea Nuova Attività"
+
+#: templates/attivita.html:29
+msgid "New Task Title"
+msgstr "Titolo Nuova Attività"
+
+#: templates/attivita.html:31 templates/attivita.html:79
+msgid "Da fare"
+msgstr "Da fare"
+
+#: templates/attivita.html:32 templates/attivita.html:80
+msgid "In corso"
+msgstr "In corso"
+
+#: templates/attivita.html:33 templates/attivita.html:81
+msgid "Completato"
+msgstr "Completato"
+
+#: templates/attivita.html:36
+msgid "Description"
+msgstr "Descrizione"
+
+#: templates/attivita.html:39
+msgid "Select Client"
+msgstr "Seleziona Cliente"
+
+#: templates/attivita.html:51
+msgid "Create Task"
+msgstr "Crea Attività"
+
+#: templates/attivita.html:83
+msgid "Update"
+msgstr "Aggiorna"
+
+#: templates/attivita.html:86
+msgid "Delete"
+msgstr "Elimina"
+
+#: templates/home.html:2
+msgid "Home"
+msgstr "Home"
+
+#: templates/home.html:4
+msgid "Overview"
+msgstr "Panoramica"
+
+#: templates/home.html:5
+msgid "Today"
+msgstr "Oggi"
+
+#: templates/home.html:15
+msgid "Team Meeting"
+msgstr "Riunione del Team"
+
+#: templates/home.html:28
+msgid "Complete Campaign Report"
+msgstr "Completa Report Campagna"
+
+#: templates/home.html:29
+msgid "Due Today"
+msgstr "Scade Oggi"
+
+#: templates/home.html:32 templates/pagamenti.html:16
+msgid "Upcoming"
+msgstr "In Arrivo"
+
+#: templates/home.html:42
+msgid "Client Presentation"
+msgstr "Presentazione Cliente"
+
+#: templates/home.html:43
+msgid "Tomorrow, 2:00 PM - 3:00 PM"
+msgstr "Domani, 14:00 - 15:00"
+
+#: templates/home.html:55
+msgid "Finalize Marketing Strategy"
+msgstr "Finalizza Strategia di Marketing"
+
+#: templates/home.html:56
+msgid "Due in 2 days"
+msgstr "Scade tra 2 giorni"
+
+#: templates/home.html:59 templates/layout.html:22 templates/pagamenti.html:5
+msgid "Payments"
+msgstr "Pagamenti"
+
+#: templates/home.html:69
+msgid "Invoice #20230701"
+msgstr "Fattura #20230701"
+
+#: templates/home.html:70
+msgid "Due on July 15"
+msgstr "Scadenza 15 Luglio"
+
+#: templates/home.html:82
+msgid "Invoice #20230615"
+msgstr "Fattura #20230615"
+
+#: templates/home.html:83
+msgid "Paid on July 1"
+msgstr "Pagato il 1 Luglio"
+
+#: templates/impostazioni.html:2 templates/impostazioni.html:4
+msgid "Impostazioni"
+msgstr "Impostazioni"
+
+#: templates/impostazioni.html:5
+msgid "Il tuo account"
+msgstr "Il tuo account"
+
+#: templates/impostazioni.html:16
+msgid "Preferenze"
+msgstr "Preferenze"
+
+#: templates/impostazioni.html:19
+msgid "Lingua"
+msgstr "Lingua"
+
+#: templates/impostazioni.html:20
+msgid "Scegli la tua lingua preferita"
+msgstr "Scegli la tua lingua preferita"
+
+#: templates/impostazioni.html:31
+msgid "Tema"
+msgstr "Tema"
+
+#: templates/impostazioni.html:32
+msgid "Scegli il tema dell'app"
+msgstr "Scegli il tema dell'app"
+
+#: templates/impostazioni.html:42 templates/impostazioni.html:45
+#: templates/notifiche.html:2
+msgid "Notifiche"
+msgstr "Notifiche"
+
+#: templates/impostazioni.html:46
+msgid "Gestisci le tue notifiche"
+msgstr "Gestisci le tue notifiche"
+
+#: templates/impostazioni.html:56 templates/impostazioni.html:59
+msgid "Privacy"
+msgstr "Privacy"
+
+#: templates/impostazioni.html:60
+msgid "Gestisci le tue impostazioni sulla privacy"
+msgstr "Gestisci le tue impostazioni sulla privacy"
+
+#: templates/impostazioni.html:70
+msgid "Sicurezza"
+msgstr "Sicurezza"
+
+#: templates/impostazioni.html:73
+msgid "Cambia password"
+msgstr "Cambia password"
+
+#: templates/impostazioni.html:74
+msgid "Cambia la tua password"
+msgstr "Cambia la tua password"
+
+#: templates/impostazioni.html:86
+msgid "Autenticazione a due fattori"
+msgstr "Autenticazione a due fattori"
+
+#: templates/impostazioni.html:87
+msgid "Abilita l'autenticazione a due fattori"
+msgstr "Abilita l'autenticazione a due fattori"
+
+#: templates/impostazioni.html:97
+msgid "Informazioni"
+msgstr "Informazioni"
+
+#: templates/impostazioni.html:100
+msgid "Termini di servizio"
+msgstr "Termini di servizio"
+
+#: templates/impostazioni.html:101
+msgid "Visualizza i termini di servizio"
+msgstr "Visualizza i termini di servizio"
+
+#: templates/impostazioni.html:113
+msgid "Informativa sulla privacy"
+msgstr "Informativa sulla privacy"
+
+#: templates/impostazioni.html:114
+msgid "Visualizza l'informativa sulla privacy"
+msgstr "Visualizza l'informativa sulla privacy"
+
+#: templates/impostazioni.html:126
+msgid "Informazioni sull'app"
+msgstr "Informazioni sull'app"
+
+#: templates/impostazioni.html:127
+msgid "Visualizza le informazioni sull'app"
+msgstr "Visualizza le informazioni sull'app"
+
+#: templates/layout.html:17
+msgid "TaskMaster"
+msgstr "TaskMaster"
+
+#: templates/layout.html:20
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: templates/layout.html:21
+msgid "Tasks"
+msgstr "Attività"
+
+#: templates/layout.html:23 templates/meeting.html:2 templates/meeting.html:5
+msgid "Meetings"
+msgstr "Riunioni"
+
+#: templates/layout.html:37
+msgid "Logout"
+msgstr "Logout"
+
+#: templates/login.html:2 templates/login.html:6
+msgid "Login"
+msgstr "Login"
+
+#: templates/login.html:9 templates/register.html:9
+msgid "Username"
+msgstr "Nome utente"
+
+#: templates/login.html:13 templates/register.html:17
+msgid "Password"
+msgstr "Password"
+
+#: templates/login.html:18
+msgid "Sign In"
+msgstr "Accedi"
+
+#: templates/login.html:21
+msgid "Don't have an account?"
+msgstr "Non hai un account?"
+
+#: templates/meeting.html:7
+msgid "Meeting Title"
+msgstr "Titolo Riunione"
+
+#: templates/meeting.html:11
+msgid "New Meeting"
+msgstr "Nuova Riunione"
+
+#: templates/meeting.html:15
+msgid "Upcoming Meetings"
+msgstr "Prossime Riunioni"
+
+#: templates/notifiche.html:4
+msgid "Notifications"
+msgstr "Notifiche"
+
+#: templates/notifiche.html:20
+msgid "Task Deadline"
+msgstr "Scadenza Attività"
+
+#: templates/notifiche.html:22
+msgid "Payment Due"
+msgstr "Pagamento in Scadenza"
+
+#: templates/notifiche.html:24
+msgid "Meeting Reminder"
+msgstr "Promemoria Riunione"
+
+#: templates/notifiche.html:31
+msgid "No new notifications."
+msgstr "Nessuna nuova notifica."
+
+#: templates/pagamenti.html:2
+msgid "Pagamenti"
+msgstr "Pagamenti"
+
+#: templates/pagamenti.html:7
+msgid "Payment Description"
+msgstr "Descrizione Pagamento"
+
+#: templates/pagamenti.html:8
+msgid "Amount"
+msgstr "Importo"
+
+#: templates/pagamenti.html:11
+msgid "New Payment"
+msgstr "Nuovo Pagamento"
+
+#: templates/pagamenti.html:29
+msgid "Due on"
+msgstr "Scade il"
+
+#: templates/pagamenti.html:36
+msgid "Past"
+msgstr "Passati"
+
+#: templates/pagamenti.html:49
+msgid "Paid on"
+msgstr "Pagato il"
+
+#: templates/register.html:2 templates/register.html:22
+msgid "Register"
+msgstr "Registrati"
+
+#: templates/register.html:6
+msgid "Create Account"
+msgstr "Crea Account"
+
+#: templates/register.html:13
+msgid "Email"
+msgstr "Email"
+
+#: templates/register.html:25
+msgid "Already have an account?"
+msgstr "Hai già un account?"

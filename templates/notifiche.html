@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}Notifiche{% endblock %}
+{% block title %}{{ _('Notifiche') }}{% endblock %}
 {% block content %}
-<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Notifications</p></div>
+<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{ _('Notifications') }}</p></div>
 {% if notifications %}
     {% for notification in notifications %}
     <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
@@ -17,17 +17,17 @@
         <div class="flex flex-col justify-center">
             <p class="text-white text-base font-medium leading-normal line-clamp-1">
                 {% if notification.type == 'task' %}
-                    Task Deadline: {{ notification.title }}
+                    {{ _('Task Deadline') }}: {{ notification.title }}
                 {% elif notification.type == 'payment' %}
-                    Payment Due: {{ notification.description }}
+                    {{ _('Payment Due') }}: {{ notification.description }}
                 {% elif notification.type == 'meeting' %}
-                    Meeting Reminder: {{ notification.title }}
+                    {{ _('Meeting Reminder') }}: {{ notification.title }}
                 {% endif %}
             </p>
         </div>
     </div>
     {% endfor %}
 {% else %}
-    <p class="px-4">No new notifications.</p>
+    <p class="px-4">{{ _('No new notifications.') }}</p>
 {% endif %}
 {% endblock %}

@@ -4,9 +4,27 @@ import os
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from flask_mail import Mail, Message
+from flask_babel import Babel, _
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+app.config['LANGUAGES'] = {
+    'en': 'English',
+    'it': 'Italiano'
+}
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
+babel = Babel(app)
+
+@babel.localeselector
+def get_locale():
+    if 'language' in session:
+        return session['language']
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+
+@app.route('/language/<language>')
+def set_language(language=None):
+    session['language'] = language
+    return redirect(url_for('impostazioni'))
 
 # Flask-Mail configuration
 app.config['MAIL_SERVER']='smtp.your-email-provider.com'

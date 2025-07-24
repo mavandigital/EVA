@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}{{ _('Home') }}{% endblock %}
 {% block content %}
-<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Overview</p></div>
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Today</h2>
+<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{ _('Overview') }}</p></div>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{ _('Today') }}</h2>
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
   <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="Video" data-size="24px" data-weight="regular">
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -12,7 +12,7 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Team Meeting</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Team Meeting') }}</p>
     <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">10:00 AM - 11:00 AM</p>
   </div>
 </div>
@@ -25,11 +25,11 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Complete Campaign Report</p>
-    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Due Today</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Complete Campaign Report') }}</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Due Today') }}</p>
   </div>
 </div>
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming</h2>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{ _('Upcoming') }}</h2>
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
   <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="Video" data-size="24px" data-weight="regular">
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -39,8 +39,8 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Client Presentation</p>
-    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Tomorrow, 2:00 PM - 3:00 PM</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Client Presentation') }}</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Tomorrow, 2:00 PM - 3:00 PM') }}</p>
   </div>
 </div>
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
@@ -52,11 +52,11 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Finalize Marketing Strategy</p>
-    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Due in 2 days</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Finalize Marketing Strategy') }}</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Due in 2 days') }}</p>
   </div>
 </div>
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Payments</h2>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{ _('Payments') }}</h2>
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
   <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="CurrencyDollar" data-size="24px" data-weight="regular">
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -66,8 +66,8 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Invoice #20230701</p>
-    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Due on July 15</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Invoice #20230701') }}</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Due on July 15') }}</p>
   </div>
 </div>
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
@@ -79,8 +79,8 @@
     </svg>
   </div>
   <div class="flex flex-col justify-center">
-    <p class="text-white text-base font-medium leading-normal line-clamp-1">Invoice #20230615</p>
-    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Paid on July 1</p>
+    <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Invoice #20230615') }}</p>
+    <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Paid on July 1') }}</p>
   </div>
 </div>
 {% endblock %}
