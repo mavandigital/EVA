@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Notifiche{% endblock %}
+{% block content %}
+<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Notifications</p></div>
+{% if notifications %}
+    {% for notification in notifications %}
+    <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
+        <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
+            {% if notification.type == 'task' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z"></path></svg>
+            {% elif notification.type == 'payment' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M152,120H136V56h8a32,32,0,0,1,32,32,8,8,0,0,0,16,0,48.05,48.05,0,0,0-48-48h-8V24a8,8,0,0,0-16,0V40h-8a48,48,0,0,0,0,96h8v64H104a32,32,0,0,1-32-32,8,8,0,0,0-16,0,48.05,48.05,0,0,0,48,48h16v16a8,8,0,0,0,16,0V216h16a48,48,0,0,0,0-96Zm-40,0a32,32,0,0,1,0-64h8v64Zm40,80H136V136h16a32,32,0,0,1,0,64Z"></path></svg>
+            {% elif notification.type == 'meeting' %}
+             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V168a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,128H40V56H216V168Zm16,40a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Z"></path></svg>
+            {% endif %}
+        </div>
+        <div class="flex flex-col justify-center">
+            <p class="text-white text-base font-medium leading-normal line-clamp-1">
+                {% if notification.type == 'task' %}
+                    Task Deadline: {{ notification.title }}
+                {% elif notification.type == 'payment' %}
+                    Payment Due: {{ notification.description }}
+                {% elif notification.type == 'meeting' %}
+                    Meeting Reminder: {{ notification.title }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="px-4">No new notifications.</p>
+{% endif %}
+{% endblock %}
