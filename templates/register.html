@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-</head>
-<body class="bg-[#122118]">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-[#1a2e24] p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold text-white mb-6 text-center">Create Account</h2>
-            <form method="post" action="/register">
-                <div class="mb-4">
-                    <label for="username" class="block text-white text-sm font-bold mb-2">Username</label>
-                    <input type="text" name="username" id="username" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-white text-sm font-bold mb-2">Email</label>
-                    <input type="email" name="email" id="email" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
-                </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-white text-sm font-bold mb-2">Password</label>
-                    <input type="password" name="password" id="password" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
-                </div>
-                <div class="flex items-center justify-between">
-                    <button type="submit" class="bg-[#39e079] hover:bg-[#4cf489] text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Register
-                    </button>
-                    <a href="/login" class="inline-block align-baseline font-bold text-sm text-[#96c5a8] hover:text-white">
-                        Already have an account?
-                    </a>
-                </div>
-            </form>
-        </div>
+{% extends "layout.html" %}
+{% block title %}{{ _('Register') }}{% endblock %}
+{% block content %}
+<div class="flex items-center justify-center min-h-screen">
+    <div class="bg-[#1a2e24] p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">{{ _('Create Account') }}</h2>
+        <form method="post" action="/register">
+            <div class="mb-4">
+                <label for="username" class="block text-white text-sm font-bold mb-2">{{ _('Username') }}</label>
+                <input type="text" name="username" id="username" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-white text-sm font-bold mb-2">{{ _('Email') }}</label>
+                <input type="email" name="email" id="email" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-white text-sm font-bold mb-2">{{ _('Password') }}</label>
+                <input type="password" name="password" id="password" class="form-input w-full bg-[#264532] text-white rounded-lg border-none focus:ring-0" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-[#39e079] hover:bg-[#4cf489] text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    {{ _('Register') }}
+                </button>
+                <a href="/login" class="inline-block align-baseline font-bold text-sm text-[#96c5a8] hover:text-white">
+                    {{ _('Already have an account?') }}
+                </a>
+            </div>
+        </form>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

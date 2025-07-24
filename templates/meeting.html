@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
-{% block title %}Meetings{% endblock %}
+{% block title %}{{ _('Meetings') }}{% endblock %}
 {% block content %}
 <div class="flex flex-wrap justify-between gap-3 p-4">
-  <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Meetings</p>
+  <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{ _('Meetings') }}</p>
   <form action="{{ url_for('new_meeting') }}" method="post" class="flex gap-2">
-      <input type="text" name="title" placeholder="Meeting Title" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
+      <input type="text" name="title" placeholder="{{ _('Meeting Title') }}" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
       <input type="date" name="date" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
       <input type="time" name="time" class="form-input bg-[#264532] text-white rounded-lg border-none focus:ring-0">
       <button type="submit" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#264532] text-white text-sm font-medium leading-normal">
-          <span class="truncate">New Meeting</span>
+          <span class="truncate">{{ _('New Meeting') }}</span>
       </button>
   </form>
 </div>
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming Meetings</h2>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{ _('Upcoming Meetings') }}</h2>
 {% for meeting in meetings %}
 <div class="flex items-center gap-4 bg-[#122118] px-4 min-h-[72px] py-2">
   <div class="text-white flex items-center justify-center rounded-lg bg-[#264532] shrink-0 size-12" data-icon="Video" data-size="24px" data-weight="regular">
