@@ -12,7 +12,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-DATABASE = 'database.db'
+DATABASE = '/tmp/database.db'
 
 def send_reminders():
     conn = sqlite3.connect(DATABASE)
