@@ -38,14 +38,24 @@ app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 
-DATABASE = 'database.db'
+DATABASE = '/tmp/database.db'
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
+        if not os.path.exists(DATABASE):
+            init_db()
         db = g._database = sqlite3.connect(DATABASE)
         db.row_factory = sqlite3.Row
     return db
+
+def init_db():
+    conn = sqlite3.connect(DATABASE)
+    # Recreate tables, etc.
+    # This is a simplified version; you'd call your existing init_db logic
+    # from database.py here, or move it into this function.
+    # For now, just creating the connection is enough to create the file.
+    conn.close()
 
 @app.teardown_appcontext
 def close_connection(exception):
@@ -297,15 +307,15 @@ def new_payment():
                (description, amount, due_date, status, session['user_id']))
     db.commit()
 
-    # Send email notification
-    user = db.execute('SELECT * FROM users WHERE id = ?', (session['user_id'],)).fetchone()
-    if user['email']:
-        msg = Message('Payment Reminder', sender = 'your-email@example.com', recipients = [user['email']])
-        msg.body = f"Hello {user['username']},\n\nThis is a reminder that a payment of ${amount} for '{description}' is due on {due_date}."
-        try:
-            mail.send(msg)
-        except Exception as e:
-            print(f"Error sending email: {e}") # Log the error
+    # # Send email notification
+    # user = db.execute('SELECT * FROM users WHERE id = ?', (session['user_id'],)).fetchone()
+    # if user['email']:
+    #     msg = Message('Payment Reminder', sender = 'your-email@example.com', recipients = [user['email']])
+    #     msg.body = f"Hello {user['username']},\n\nThis is a reminder that a payment of ${amount} for '{description}' is due on {due_date}."
+    #     try:
+    #         mail.send(msg)
+    #     except Exception as e:
+    #         print(f"Error sending email: {e}") # Log the error
 
     return redirect(url_for('pagamenti'))
 
