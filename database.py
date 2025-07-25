@@ -52,7 +52,9 @@ def init_db():
                     description TEXT NOT NULL,
                     amount REAL NOT NULL,
                     due_date TEXT,
-                    status TEXT NOT NULL
+                    status TEXT NOT NULL,
+                    user_id INTEGER,
+                    FOREIGN KEY(user_id) REFERENCES users(id)
                 )''')
     print("Table 'payments' created successfully")
 
@@ -60,7 +62,9 @@ def init_db():
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     title TEXT NOT NULL,
                     date TEXT NOT NULL,
-                    time TEXT NOT NULL
+                    time TEXT NOT NULL,
+                    user_id INTEGER,
+                    FOREIGN KEY(user_id) REFERENCES users(id)
                 )''')
     print("Table 'meetings' created successfully")
 

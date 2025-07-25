@@ -214,7 +214,9 @@ def delete_task(task_id):
 @app.route('/impostazioni')
 @login_required
 def impostazioni():
-    return render_template('impostazioni.html')
+    db = get_db()
+    user = db.execute('SELECT * FROM users WHERE id = ?', (session['user_id'],)).fetchone()
+    return render_template('impostazioni.html', user=user)
 
 @app.route('/meeting')
 @login_required
@@ -230,8 +232,8 @@ def new_meeting():
     date = request.form['date']
     time = request.form['time']
     db = get_db()
-    db.execute('INSERT INTO meetings (title, date, time) VALUES (?, ?, ?)',
-               (title, date, time))
+    db.execute('INSERT INTO meetings (title, date, time, user_id) VALUES (?, ?, ?, ?)',
+               (title, date, time, session['user_id']))
     db.commit()
     return redirect(url_for('meeting'))
 
@@ -291,8 +293,8 @@ def new_payment():
     due_date = request.form['due_date']
     status = 'Scheduled'
     db = get_db()
-    db.execute('INSERT INTO payments (description, amount, due_date, status) VALUES (?, ?, ?, ?)',
-               (description, amount, due_date, status))
+    db.execute('INSERT INTO payments (description, amount, due_date, status, user_id) VALUES (?, ?, ?, ?, ?)',
+               (description, amount, due_date, status, session['user_id']))
     db.commit()
 
     # Send email notification
