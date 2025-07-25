@@ -22,9 +22,6 @@ def before_request():
     else:
         g.locale = request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
-@babel.localeselector
-def get_locale():
-    return g.locale
 
 @app.route('/language/<language>')
 def set_language(language=None):
@@ -75,7 +72,7 @@ def login():
             session['user_id'] = user['id']
             return redirect(url_for('home'))
         else:
-            flash('Invalid username or password')
+            flash(_('Invalid username or password'))
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -91,7 +88,7 @@ def register():
             db.commit()
             return redirect(url_for('login'))
         except sqlite3.IntegrityError:
-            flash('Username or email already exists')
+            flash(_('Username or email already exists'))
     return render_template('register.html')
 
 @app.route('/logout')
