@@ -1,7 +1,9 @@
 import sqlite3
 
+DATABASE = '/tmp/database.db'
+
 def init_db():
-    conn = sqlite3.connect('/tmp/database.db')
+    conn = sqlite3.connect(DATABASE)
     print("Opened database successfully")
 
     conn.execute('''CREATE TABLE IF NOT EXISTS users (

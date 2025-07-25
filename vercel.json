@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "app.py",
-      "use": "@vercel/python",
-      "config": {
-        "buildCommand": "pybabel compile -d translations"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
