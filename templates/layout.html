@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ session.get('language', 'en') }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +14,13 @@
                     <div class="size-4">
                         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
                     </div>
-                    <a href="{{ url_for('home') }}" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">{{ _('TaskMaster') }}</a>
+                    <a href="{{ url_for('home') }}" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">TaskMaster</a>
                 </div>
                 <div class="flex items-center gap-9">
-                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('home') }}">{{ _('Dashboard') }}</a>
-                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('attivita') }}">{{ _('Tasks') }}</a>
-                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('pagamenti') }}">{{ _('Payments') }}</a>
-                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('meeting') }}">{{ _('Meetings') }}</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('home') }}">Dashboard</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('attivita') }}">Tasks</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('pagamenti') }}">Payments</a>
+                    <a class="text-white text-sm font-medium leading-normal" href="{{ url_for('meeting') }}">Meetings</a>
                 </div>
             </div>
             <div class="flex flex-1 justify-end items-center gap-8">
@@ -34,8 +34,8 @@
                         <span class="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">{{ notifications|length }}</span>
                     {% endif %}
                 </a>
-                <a href="{{ url_for('impostazioni') }}" class="text-white text-sm font-medium leading-normal">{{ _('Impostazioni') }}</a>
-                <a href="{{ url_for('logout') }}" class="text-white text-sm font-medium leading-normal">{{ _('Logout') }}</a>
+                <a href="{{ url_for('impostazioni') }}" class="text-white text-sm font-medium leading-normal">Impostazioni</a>
+                <a href="{{ url_for('logout') }}" class="text-white text-sm font-medium leading-normal">Logout</a>
             </div>
         </header>
         <main class="px-40 flex flex-1 justify-center py-5">
@@ -44,7 +44,7 @@
                   {% if messages %}
                     {% for category, message in messages %}
                       <div class="p-4 mb-4 text-sm {{ 'text-red-700 bg-red-100' if category == 'error' else 'text-green-700 bg-green-100' }} rounded-lg" role="alert">
-                        {{ _(message) }}
+                        {{ message }}
                       </div>
                     {% endfor %}
                   {% endif %}

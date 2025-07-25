@@ -1,43 +1,28 @@
 {% extends "layout.html" %}
-{% block title %}{{ _('Impostazioni') }}{% endblock %}
+{% block title %}Impostazioni{% endblock %}
 {% block content %}
-<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{ _('Impostazioni') }}</p></div>
+<div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Impostazioni</p></div>
 
 <div class="bg-[#1a2e24] p-8 rounded-lg shadow-lg w-full">
 
     <!-- Account Info -->
-    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">{{ _('Il tuo account') }}</h2>
+    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Il tuo account</h2>
     <div class="flex items-center gap-4 py-2">
       <div class="flex flex-col justify-center">
-        <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Username') }}: {{ user.username }}</p>
-        <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Email') }}: {{ user.email }}</p>
-      </div>
-    </div>
-
-    <!-- Preferences -->
-    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">{{ _('Preferenze') }}</h2>
-    <div class="flex items-center gap-4 py-2 justify-between">
-      <div class="flex flex-col justify-center">
-        <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Lingua') }}</p>
-        <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Scegli la tua lingua preferita') }}</p>
-      </div>
-      <div class="shrink-0">
-        <div class="flex gap-4">
-            <a href="{{ url_for('set_language', language='en') }}" class="px-3 py-1 rounded-md {{ 'bg-[#39e079] text-black' if session.get('language', 'en') == 'en' else 'bg-[#264532]' }}">{{ _('Inglese') }}</a>
-            <a href="{{ url_for('set_language', language='it') }}" class="px-3 py-1 rounded-md {{ 'bg-[#39e079] text-black' if session.get('language') == 'it' else 'bg-[#264532]' }}">{{ _('Italiano') }}</a>
-        </div>
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Username: {{ user.username }}</p>
+        <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Email: {{ user.email }}</p>
       </div>
     </div>
 
     <!-- Security -->
-    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">{{ _('Sicurezza') }}</h2>
+    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Sicurezza</h2>
     <div class="flex items-center gap-4 py-2 justify-between">
       <div class="flex flex-col justify-center">
-        <p class="text-white text-base font-medium leading-normal line-clamp-1">{{ _('Cambia password') }}</p>
-        <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">{{ _('Cambia la tua password') }}</p>
+        <p class="text-white text-base font-medium leading-normal line-clamp-1">Cambia password</p>
+        <p class="text-[#96c5a8] text-sm font-normal leading-normal line-clamp-2">Cambia la tua password</p>
       </div>
       <div class="shrink-0">
-        <button class="text-white bg-[#264532] px-3 py-1 rounded-md">{{ _('Cambia') }}</button>
+        <button class="text-white bg-[#264532] px-3 py-1 rounded-md">Cambia</button>
       </div>
     </div>
 </div>
